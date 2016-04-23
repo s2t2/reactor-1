@@ -31,3 +31,4 @@
   + https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.qa1qu4n4f
   + http://survivejs.com/webpack_react/developing_with_webpack/
   + https://www.bensmithett.com/smarter-css-builds-with-webpack/
+  + https://robots.thoughtbot.com/setting-up-webpack-for-react-and-hot-module-replacement
