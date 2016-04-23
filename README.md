@@ -1,4 +1,4 @@
-#  React.js
+# Learning React.js
 
 Install React.
 
@@ -7,12 +7,14 @@ npm install react --save
 npm install react-dom --save
 ````
 
-Install webpack development server.
+Install Webpack development server.
 
 ```` sh
 npm install webpack --save-dev
 npm install webpack-dev-server --save-dev
 ````
+
+Configure Webpack development server using a file called `webpack.config.js`.
 
 Install Babel for JSX transpilation.
 
@@ -26,8 +28,7 @@ npm install babel-preset-es2015 --save-dev
 Start the server.
 
 ```` sh
-webpack-dev-server --progress --colors
-#webpack main.js bundle.js --module-bind 'js=babel-loader'
+webpack-dev-server --progress --colors --inline --hot
 ````
 
-Visit http://localhost:8080/webpack-dev-server/ in a browser.
+Visit http://localhost:8080/ in a browser.
