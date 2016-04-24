@@ -32,3 +32,5 @@
   + http://survivejs.com/webpack_react/developing_with_webpack/
   + https://www.bensmithett.com/smarter-css-builds-with-webpack/
   + https://robots.thoughtbot.com/setting-up-webpack-for-react-and-hot-module-replacement
+  + https://github.com/reactjs/react-tutorial
+  + http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup

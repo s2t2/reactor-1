@@ -43,3 +43,6 @@ npm start
 ````
 
 Visit http://localhost:8080/ in a browser.
+
+> EDIT: to use the tutorial-provided express server with routes to get and post comments,
+  run instead a dev server with `node server.js`

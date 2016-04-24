@@ -7,9 +7,12 @@
     "start": "webpack-dev-server --config config/webpack.config.js --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": "https://github.com/s2t2/reactor-1",
   "author": "MJ Rossetti (@s2t2)",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.0",
+    "jquery": "^2.2.3",
     "marked": "^0.3.5",
     "react": "^15.0.1",
     "react-dom": "^15.0.1"
