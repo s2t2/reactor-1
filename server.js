@@ -1,5 +1,4 @@
-// source: https://github.com/reactjs/react-tutorial/blob/master/server.js
-// adaptations: http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
+// source: https://raw.githubusercontent.com/reactjs/react-tutorial/master/server.js
 
 /**
  * This file provided by Facebook is for non-commercial testing and evaluation
@@ -17,51 +16,15 @@ var fs = require('fs');
 var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
-var httpProxy = require('http-proxy'); // adaptation
-var proxy = httpProxy.createProxyServer(); // adaptation
 var app = express();
 
-var COMMENTS_FILE = path.join(__dirname, 'comments.json');
-var isProduction = process.env.NODE_ENV === 'production'; // adaptation
-var port = isProduction ? process.env.PORT : 3000; // adaptation
+var COMMENTS_FILE = path.join(__dirname, 'db', 'comments.json');
 
-app.set('port', port); // adaptation
+app.set('port', (process.env.PORT || 3000));
 
-app.use('/', express.static(path.join(__dirname, 'app/views'))); // customization
+app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
-
-
-
-// adaptation:
-// We only want to run the workflow when not in production
-if (!isProduction) {
-  // We require the bundler inside the if block because
-  // it is only needed in a development environment. Later
-  // you will see why this is a good idea
-  var bundle = require('./dist/bundle.js');
-  bundle();
-
-  // Any requests to localhost:3000/dist is proxied
-  // to webpack-dev-server
-  app.all('/dist/*', function (req, res) {
-    proxy.web(req, res, {
-        target: 'http://localhost:8080'
-    });
-  });
-}
-
-// It is important to catch any errors from the proxy or the
-// server will crash. An example of this is connecting to the
-// server when webpack is bundling
-proxy.on('error', function(e) {
-  console.log('Could not connect to proxy, please try again...');
-});
-
-
-
-
 
 // Additional middleware which will set headers that we need on each request.
 app.use(function(req, res, next) {
@@ -84,31 +47,31 @@ app.get('/api/comments', function(req, res) {
   });
 });
 
-//app.post('/api/comments', function(req, res) {
-//  fs.readFile(COMMENTS_FILE, function(err, data) {
-//    if (err) {
-//      console.error(err);
-//      process.exit(1);
-//    }
-//    var comments = JSON.parse(data);
-//    // NOTE: In a real implementation, we would likely rely on a database or
-//    // some other approach (e.g. UUIDs) to ensure a globally unique id. We'll
-//    // treat Date.now() as unique-enough for our purposes.
-//    var newComment = {
-//      id: Date.now(),
-//      author: req.body.author,
-//      text: req.body.text,
-//    };
-//    comments.push(newComment);
-//    fs.writeFile(COMMENTS_FILE, JSON.stringify(comments, null, 4), function(err) {
-//      if (err) {
-//        console.error(err);
-//        process.exit(1);
-//      }
-//      res.json(comments);
-//    });
-//  });
-//});
+app.post('/api/comments', function(req, res) {
+  fs.readFile(COMMENTS_FILE, function(err, data) {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    var comments = JSON.parse(data);
+    // NOTE: In a real implementation, we would likely rely on a database or
+    // some other approach (e.g. UUIDs) to ensure a globally unique id. We'll
+    // treat Date.now() as unique-enough for our purposes.
+    var newComment = {
+      id: Date.now(),
+      author: req.body.author,
+      text: req.body.text,
+    };
+    comments.push(newComment);
+    fs.writeFile(COMMENTS_FILE, JSON.stringify(comments, null, 4), function(err) {
+      if (err) {
+        console.error(err);
+        process.exit(1);
+      }
+      res.json(comments);
+    });
+  });
+});
 
 app.listen(app.get('port'), function() {
   console.log('Server started: http://localhost:' + app.get('port') + '/');

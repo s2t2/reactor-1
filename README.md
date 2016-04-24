@@ -14,7 +14,7 @@ npm install webpack --save-dev
 npm install webpack-dev-server --save-dev
 ````
 
-Install css loaders for use by webpack.
+Install CSS loaders for use by Webpack.
 
 ```` sh
 npm install style-loader --save-dev
@@ -42,7 +42,7 @@ Start the server.
 npm start
 ````
 
-Visit http://localhost:8080/ in a browser.
+> NOTE: To GET and POST comments using the react-tutorial-provided express server,
+  run also `node server.js` and view data on localhost:3000.
 
-> EDIT: to use the tutorial-provided express server with routes to get and post comments,
-  run instead a dev server with `node server.js`
+Visit http://localhost:8080/ in a browser.

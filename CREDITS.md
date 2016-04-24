@@ -14,6 +14,7 @@
   + https://webpack.github.io/docs/list-of-loaders.html
   + https://webpack.github.io/docs/webpack-dev-server.html
   + https://webpack.github.io/docs/stylesheets.html
+  + https://webpack.github.io/docs/webpack-dev-server.html#proxy
 
 ### JSX and ES6 and Babel
 
@@ -34,3 +35,4 @@
   + https://robots.thoughtbot.com/setting-up-webpack-for-react-and-hot-module-replacement
   + https://github.com/reactjs/react-tutorial
   + http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
+  + http://stackoverflow.com/questions/35479222/creating-a-expressjs-proxy-server-between-webpack-and-api

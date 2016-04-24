@@ -4,21 +4,22 @@ var webpack = require('webpack');
 module.exports = {
   entry: './app.js',
   output: {
-    //path: __dirname,
-    //filename: 'dist/bundle.js'
-    //path: __dirname + "/dist",
-    //filename: __dirname+'/dist/bundle.js'
-
     filename: './dist/bundle.js'
-    //path: path.join(__dirname, 'dist'),
-    //filename: 'bundle.js'
   },
   devServer: {
     contentBase: "./app/views",
     progress:true,
     colors:true,
     inline:true,
-    // hot:true // NEED TO PASS THIS AS THE --hot flag. see https://github.com/webpack/webpack/issues/1151
+    proxy: {
+      "/api/*": {
+        target: "http://localhost:3000",
+        secure: false,
+        //rewrite: function(req, options) {
+        //  //you can handle rewrite here if you need to
+        //}
+      }
+    }
   },
   module: {
     loaders: [
