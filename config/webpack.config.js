@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 var port = process.env.PORT || 8080;
+var apiPort = process.env.API_PORT || 3000;
 
 module.exports = {
   entry: './app.js',
@@ -16,7 +17,8 @@ module.exports = {
     inline:true,
     proxy: {
       "/api/*": {
-        target: "http://localhost:3000",
+        target: "http://localhost:3000", // probably need to change this to
+        // target: "http://localhost:"+apiPort , // probably need to change this to
         secure: false,
         //rewrite: function(req, options) {
         //  //you can handle rewrite here if you need to
