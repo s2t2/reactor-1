@@ -36,3 +36,7 @@
   + https://github.com/reactjs/react-tutorial
   + http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
   + http://stackoverflow.com/questions/35479222/creating-a-expressjs-proxy-server-between-webpack-and-api
+
+## Deploying to Heroku
+
+  + http://revelry.media/tech-talk/2016/2/15/getting-a-simple-react-app-on-heroku

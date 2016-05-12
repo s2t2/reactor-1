@@ -1,5 +1,7 @@
 # Learning React.js
 
+## Installation
+
 Install React.
 
 ````  sh
@@ -30,6 +32,8 @@ npm install babel-preset-react --save-dev
 npm install babel-preset-es2015 --save-dev
 ````
 
+## Configuration
+
 Configure Webpack development server using a file called `webpack.config.js` or a custom file name.
 
 Configure `package.json` to specify a script which will run the webpack dev server.
@@ -37,12 +41,18 @@ Configure `package.json` to specify a script which will run the webpack dev serv
 Start the server.
 
 ```` sh
-#webpack-dev-server --config config/webpack.config.js --content-base app/views/ --progress --colors --inline --hot
-#webpack-dev-server --config config/webpack.config.js --hot
+# webpack-dev-server --config config/webpack.config.js --content-base app/views/ --progress --colors --inline --hot
+# webpack-dev-server --config config/webpack.config.js --hot
 npm start
+npm run start-api
 ````
 
-> NOTE: To GET and POST comments using the react-tutorial-provided express server,
-  run also `node server.js` and view data on localhost:3000.
-
 Visit http://localhost:8080/ in a browser.
+
+View API data on http://localhost:3000/.
+
+## Deploying
+
+```` sh
+git push heroku master
+````

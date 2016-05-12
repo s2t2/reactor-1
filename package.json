@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.config.js --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-on-production": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config config/webpack.config.js",
+    "start-api":"node server.js",
+    "postinstall": "webpack -p"
   },
   "repository": "https://github.com/s2t2/reactor-1",
   "author": "MJ Rossetti (@s2t2)",

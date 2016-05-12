@@ -1,12 +1,15 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var port = process.env.PORT || 8080;
+
 module.exports = {
   entry: './app.js',
   output: {
     filename: './dist/bundle.js'
   },
   devServer: {
+    port: port,
     contentBase: "./app/views",
     progress:true,
     colors:true,
