@@ -20,7 +20,7 @@ var app = express();
 
 var COMMENTS_FILE = path.join(__dirname, 'db', 'comments.json');
 
-app.set('port', (process.env.API_PORT || 3000));
+app.set('port', (process.env.API_PORT || 5000));
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());

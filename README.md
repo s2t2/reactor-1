@@ -49,7 +49,7 @@ npm run start-api
 
 Visit http://localhost:8080/ in a browser.
 
-View API data on http://localhost:3000/.
+View API data at http://localhost:5000/api/comments.
 
 ## Deploying
 

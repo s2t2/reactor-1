@@ -1,8 +1,15 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var host;
+if (process.env.NODE_ENV == "production") {
+  host = "https://reactor-1.herokuapp.com" // todo: get/look-up
+} else {
+  host = "http://localhost"
+}
+
 var port = process.env.PORT || 8080;
-var apiPort = process.env.API_PORT || 3000;
+var apiPort = process.env.API_PORT || 5000;
 
 module.exports = {
   entry: './app.js',
@@ -17,8 +24,9 @@ module.exports = {
     inline:true,
     proxy: {
       "/api/*": {
-        target: "http://localhost:3000", // probably need to change this to
-        // target: "http://localhost:"+apiPort , // probably need to change this to
+        // target: "http://localhost:3000",
+        target: host+":"+apiPort ,
+
         secure: false,
         //rewrite: function(req, options) {
         //  //you can handle rewrite here if you need to
