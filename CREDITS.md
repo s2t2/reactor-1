@@ -40,3 +40,6 @@
 ## Deploying to Heroku
 
   + http://revelry.media/tech-talk/2016/2/15/getting-a-simple-react-app-on-heroku
+  + http://stackoverflow.com/questions/15693192/heroku-node-js-error-web-process-failed-to-bind-to-port-within-60-seconds-of
+  + http://stackoverflow.com/questions/6956567/node-js-on-heroku-with-2-ports
+  + https://devcenter.heroku.com/articles/node-websockets

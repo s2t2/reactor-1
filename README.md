@@ -54,5 +54,6 @@ View API data on http://localhost:3000/.
 ## Deploying
 
 ```` sh
+heroku config:set API_PORT=5000
 git push heroku master
 ````
